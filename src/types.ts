@@ -1,3 +1,4 @@
 export type ConfigType = {
-    debugMode: boolean
+    debugMode: boolean,
+    locale: string
 }
