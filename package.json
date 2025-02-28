@@ -2,11 +2,12 @@
   "name": "fivem_js",
   "type": "module",
   "scripts": {
-    "server": "bun build src/server/server.ts --outdir=./dist --target=node",
-    "client": "bun build src/client/client.ts --outdir=./dist --target=node"
+    "dev": "bunx rolldown -c",
+    "prod": "tsc --isolatedModules -p tsconfig.json --skipLibCheck && bunx rolldown -c"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "rolldown": "^1.0.0-beta.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
