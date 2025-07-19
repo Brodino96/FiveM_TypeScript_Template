@@ -1,6 +1,10 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "types": ["@citizenfx/client"]
-    }
+        "types": [
+            "@citizenfx/client",
+            "@communityox/ox_lib/client",
+        ]
+    },
+    "include": [ "../shared" ]
 }
