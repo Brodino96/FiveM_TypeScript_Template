@@ -1,5 +1,12 @@
-import type { ConfigType } from "../types"
+import z from "zod"
+import { getLocalesOptions } from "./locales"
 
-//@ts-ignore
-const jsonData = LoadResourceFile(GetCurrentResourceName(), "config.json")
-export const Config: ConfigType = JSON.parse(jsonData)
+const ConfigType = z.object({
+    debugMode: z.boolean(),
+    locale: z.literal(getLocalesOptions())
+})
+
+export default async function getConfig() {
+    const data = LoadResourceFile(GetCurrentResourceName(), "config.json")
+    const parsedData = await JSON.parse(data)
+}
