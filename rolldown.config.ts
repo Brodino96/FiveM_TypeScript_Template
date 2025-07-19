@@ -5,7 +5,12 @@ export default defineConfig([
         input: "src/client/client.ts",
         output: {
             file: "dist/client.js",
-            target: "esnext", // FiveM should use es2017
+            /**
+             * FiveM is supposed to use es2017 on the client side
+             * but it's also mega broken!
+             * I found that esnext works fine so I will use this until further notice
+             */
+            target: "esnext",
         }
     },
     {
