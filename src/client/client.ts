@@ -1,9 +1,11 @@
-import Config from "../shared/config"
-import Logger from "../shared/logger"
+import { Logger, LogLevel } from "../shared/logger"
+import { triggerServerCallback } from "@communityox/ox_lib/client"
 
-function init() {
-    Logger.info("This is the client!")
-    Logger.info(`The current configuration is: ${Config}`)
+async function init() {
+    const response: LogLevel | void = await triggerServerCallback(`${GetCurrentResourceName()}:getLogLevel`, null)
+    if (!response) return
+    const logger = new Logger(response)
+    logger.info("This is the client!")
 }
 
 init()

@@ -1,9 +1,9 @@
-import Config from "../shared/config"
-import Logger from "../shared/logger"
+import { Logger } from "../shared/logger"
+import Config from "./utils/config"
 
 function init() {
-    Logger.info("This is the server!")
-    Logger.info(`The current configuration is: ${Config}`)
+    const logger = new Logger(Config.logLevel)
+    logger.info("This is the server")
 }
 
 init()
