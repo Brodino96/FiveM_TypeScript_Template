@@ -1,0 +1,13 @@
+{
+    /**
+    * 0 = Everything
+    * 1 = Every information
+    * 2 = Only warns and errors
+    * 3 = Only errors
+    * 4 = Nothing gets logged
+    */
+    "logLevel": 2,
+
+    // Watch the locales directory
+    "locale": "en"
+}
