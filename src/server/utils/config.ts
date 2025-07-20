@@ -3,13 +3,17 @@ import { getLocalesOptions } from "./locales"
 import { LogLevel } from "../../shared/logger"
 import { JSONC } from "jsonc.min"
 
+console.log(getLocalesOptions())
+
 const ConfigType = z.object({
     logLevel: z.enum(LogLevel),
     locale: z.literal(getLocalesOptions()),
 })
 
-const data = LoadResourceFile(GetCurrentResourceName(), "config.jsonc")
-const parsedData = JSONC.parse(data)
-const Config = ConfigType.parse(parsedData)
+export function getConfig() {
+    const data = LoadResourceFile(GetCurrentResourceName(), "config.jsonc")
+    const parsedData = JSONC.parse(data)
+    const Config = ConfigType.parse(parsedData)
 
-export default Config
+    return Config
+}
