@@ -5,6 +5,5 @@
             "@citizenfx/server",
             "@communityox/ox_lib/server",
         ]
-    },
-    "include": [ "../shared" ]
+    }
 }
