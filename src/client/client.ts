@@ -1,8 +1,9 @@
 import { Logger, LogLevel } from "../shared/logger"
 import { triggerServerCallback } from "@communityox/ox_lib/client"
+import type { LocaleType } from "../shared/types"
 
 async function init() {
-    const response: { logLevel: LogLevel, locale: {}} | void = await triggerServerCallback(`${GetCurrentResourceName()}:init`, null)
+    const response: { logLevel: LogLevel, locale: LocaleType } | void = await triggerServerCallback(`${GetCurrentResourceName()}:init`, null)
     if (!response || !response.logLevel || !response.locale) return
     const logger = new Logger(response.logLevel)
     logger.debug("This is the client!")
