@@ -6,6 +6,7 @@ const jsonData = LoadResourceFile(GetCurrentResourceName(), `/locales/${Config.l
 const Locale = JSON.parse(jsonData)
 
 export function getLocalesOptions(): string[] {
+    //@ts-ignore
     const path: string = GetResourcePath(GetCurrentResourceName())
     return readdirSync(path, { encoding: "utf-8" })
 }

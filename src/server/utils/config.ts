@@ -1,5 +1,5 @@
 import * as z from "zod/mini"
-import { getLocalesOptions } from "../../shared/locales"
+import { getLocalesOptions } from "./locales"
 import { LogLevel } from "../../shared/logger"
 import { JSONC } from "jsonc.min"
 
