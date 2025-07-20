@@ -1,4 +1,13 @@
 import { defineConfig } from "rolldown"
+import { visualizer } from "rollup-plugin-visualizer"
+
+const clientPlugins = []
+const serverPlugins = []
+
+if (process.env["GRAPH"]) {
+    clientPlugins.push(visualizer({ title: "Client", filename: "graphs/client.html" }))
+    serverPlugins.push(visualizer({ title: "Server", filename: "graphs/server.html" }))
+}
 
 export default defineConfig([
     {
@@ -11,7 +20,8 @@ export default defineConfig([
              * I found that esnext works fine so I will use this until further notice
              */
             target: "esnext",
-        }
+        },
+        plugins: clientPlugins
     },
     {
         input: "src/server/server.ts",
@@ -20,6 +30,7 @@ export default defineConfig([
             file: "dist/server.js",
             target: "esnext",
             format: "cjs",
-        }
+        },
+        plugins: serverPlugins
     }
 ])

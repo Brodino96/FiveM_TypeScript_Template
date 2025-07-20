@@ -3,7 +3,8 @@
   "type": "module",
   "scripts": {
     "dev": "bunx rolldown -c",
-    "prod": "tsgo --isolatedModules -p tsconfig.json --skipLibCheck && bunx rolldown -c"
+    "prod": "tsgo --isolatedModules -p tsconfig.json --skipLibCheck && bunx rolldown -c",
+    "graph": "tsgo --isolatedModules -p tsconfig.json --skipLibCheck && GRAPH=1 bunx rolldown -c"
   },
   "devDependencies": {
     "@types/bun": "latest",
