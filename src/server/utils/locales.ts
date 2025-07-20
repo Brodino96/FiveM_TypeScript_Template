@@ -1,9 +1,8 @@
 import { readdirSync } from "fs"
-import { getConfig } from "./config"
-
+import Config from "./config"
 
 //@ts-ignore
-const jsonData = LoadResourceFile(GetCurrentResourceName(), `/locales/${getConfig().locale}.json`)
+const jsonData = LoadResourceFile(GetCurrentResourceName(), `/locales/${Config.locale}.json`)
 const Locale = JSON.parse(jsonData)
 
 export function getLocalesOptions(): string[] {
