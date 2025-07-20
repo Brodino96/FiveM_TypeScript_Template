@@ -6,7 +6,7 @@ export enum LogLevel {
     debug = 4
 }
 
-export class Logger {
+export class LoggerClass {
 
     private readonly layer: LogLevel
 

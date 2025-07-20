@@ -1,21 +1,22 @@
 import { onClientCallback } from "@communityox/ox_lib/server"
-import { Logger } from "../shared/logger"
+import { LoggerClass } from "../shared/logger"
 import Locale from "./utils/locales"
 import Config from "./utils/config"
+import type { Initializer } from "../shared/types"
+
+export const Logger: LoggerClass = new LoggerClass(Config.logLevel)
 
 function init() {
-    const config = Config
-    const logger = new Logger(config.logLevel)
-    onClientCallback(`${GetCurrentResourceName()}:init`, (source) => {
-        logger.debug("Recived init request from client: ", source)
+    onClientCallback(`${GetCurrentResourceName()}:init`, (source): Initializer => {
+        Logger.debug("Recived init request from client: ", source)
         return {
             locale: Locale,
-            logLevel: config.logLevel
+            logLevel: Config.logLevel
         }
     })
-    logger.debug("This is the server!")
-    logger.debug("Current log level: ", config.logLevel)
-    logger.debug("Current locale: ", Locale)
+    Logger.debug("This is the server!")
+    Logger.debug("Current log level: ", Config.logLevel)
+    Logger.debug("Current locale: ", Locale)
 }
 
 init()
