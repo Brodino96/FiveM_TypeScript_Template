@@ -1,3 +1,3 @@
-import defaultLocale from "../../script/locales/en.json"
+import type defaultLocale from "../../script/locales/en.json";
 
-export type LocaleType = typeof defaultLocale
+export type LocaleType = typeof defaultLocale;
