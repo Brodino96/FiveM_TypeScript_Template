@@ -3,7 +3,10 @@
     "compilerOptions": {
         "types": [
             "@citizenfx/client",
-            "@communityox/ox_lib/client",
-        ]
-    }
+            "@communityox/ox_lib/client"
+        ],
+    },
+    "include": [
+        "../shared/**/*"
+    ]
 }

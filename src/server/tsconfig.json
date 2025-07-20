@@ -4,7 +4,10 @@
         "types": [
             "@citizenfx/server",
             "@communityox/ox_lib/server",
-            "@types/node",
-        ]
-    }
+            "@types/node"
+        ],
+    },
+    "include": [
+        "../shared/**/*"
+    ]
 }
