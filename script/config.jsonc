@@ -1,10 +1,11 @@
 {
     /**
-    * 0 = Everything
-    * 1 = Every information
-    * 2 = Only warns and errors
-    * 3 = Only errors
-    * 4 = Nothing gets logged
+    * What gets logged?
+    * 0 = Nothing
+    * 1 = Only errors
+    * 2 = Warns and errors
+    * 3 = Informations, warns and errors
+    * 4 = Everything
     */
     "logLevel": 2,
 

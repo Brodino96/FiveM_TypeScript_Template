@@ -1,9 +1,9 @@
 export enum LogLevel {
-    debug = 0,
-    info = 1,
+    nothing = 0,
+    error = 1,
     warn = 2,
-    error = 3,
-    nothing = 4
+    info = 3,
+    debug = 4
 }
 
 export class Logger {
@@ -15,7 +15,7 @@ export class Logger {
     }
 
     private display(level: LogLevel, ...args: any) {
-        if (this.layer <= level) return
+        if (this.layer >= level) return
         switch (level) {
             case LogLevel.debug:
                 console.debug(...args)
